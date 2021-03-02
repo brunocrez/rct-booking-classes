@@ -11,7 +11,7 @@ interface SuccessResponseType {
   age: number;
   email: string;
   phone: string;
-  teacher: false;
+  teacher: string;
 }
 
 export default async (req: NextApiRequest, res: NextApiResponse<ErrorResponseType | SuccessResponseType>): Promise<void> => {
