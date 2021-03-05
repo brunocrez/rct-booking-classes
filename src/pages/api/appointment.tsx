@@ -3,7 +3,7 @@ import { getSession } from 'next-auth/client';
 
 import { ObjectId } from 'mongodb';
 
-import connect from '../../config/database';
+import connect from '../../../config/database';
 
 interface ErrorResponseType {
   error: string;

@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
-import connect from '../../config/database';
+import connect from '../../../config/database';
 
 interface ErrorResponseType {
   error: string;

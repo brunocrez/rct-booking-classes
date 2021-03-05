@@ -1,7 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { ObjectId } from 'mongodb';
 
-import connect from '../../config/database';
+import connect from '../../../../config/database';
 
 interface ErrorResponseType {
   error: string;
@@ -23,19 +22,20 @@ interface SuccessResponseType {
 
 export default async (req: NextApiRequest, res: NextApiResponse<ErrorResponseType | SuccessResponseType>): Promise<void> => {
   if(req.method == 'GET') {
-    const { id } = req.body;
+    const { email } = req.query;
+    console.log(email)
 
-    if (!id) {
-      res.status(400).json({ error: 'Teacher ID is missing on request body.' });
+    if (!email) {
+      res.status(400).json({ error: 'E-mail is missing on URL.' });
       return;
     }
 
     const { db } = await connect();
 
-    const response = await db.collection('users').findOne({ _id: new ObjectId(id) });
+    const response = await db.collection('users').findOne({ email });
 
     if (!response) {
-      res.status(400).send({ error: 'Teacher not found in our database.'});
+      res.status(400).send({ error: `E-mail ${email} not found in our database.`});
       return;
     }
 

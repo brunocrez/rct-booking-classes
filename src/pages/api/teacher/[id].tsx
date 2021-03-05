@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { ObjectId } from 'mongodb';
 
-import connect from '../../../config/database';
+import connect from '../../../../config/database';
 
 interface ErrorResponseType {
   error: string;

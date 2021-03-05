@@ -1,10 +1,13 @@
 import { signIn, signOut, useSession } from 'next-auth/client';
 
+import { Nav } from '../../src/components/Nav';
+
 export default function Home() {
   const [ session, loading ] = useSession();
   
   return (
     <>
+    <Nav />
       {!session && <>
         Not signed in <br/>
         <button onClick={() => signIn('auth0')}>Sign in</button>
