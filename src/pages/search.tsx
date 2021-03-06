@@ -2,7 +2,7 @@ import { signIn, signOut, useSession } from 'next-auth/client';
 
 import { Nav } from '../../src/components/Nav';
 
-export default function Home() {
+export default function Search() {
   const [ session, loading ] = useSession();
   
   return (

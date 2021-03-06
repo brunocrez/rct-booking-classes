@@ -4,7 +4,7 @@ import { signIn, signOut, useSession } from 'next-auth/client';
 import { api } from '../../config/api';
 import { Nav } from '../../src/components/Nav';
 
-export default function Home() {
+export default function Profile() {
   const [ session, loading ] = useSession();
   
   const { data, error } = useSWR(`/api/user/${session?.user.email}`, api);
