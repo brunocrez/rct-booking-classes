@@ -34,7 +34,22 @@ export default async (req: NextApiRequest, res: NextApiResponse<ErrorResponseTyp
         res.status(400).json({ error: 'Missing parameters.' });
         return;
       }
-    }   
+    }
+    
+    let errorHour = false;
+    for (const day in available_hours) {
+      available_hours[day].forEach(hour => {
+        if (hour < 7 || hour > 20) {
+          errorHour = true;
+          return;
+        }
+      });
+    }
+
+    if (errorHour) {
+      res.status(400).json({ error: 'Teaching hours must be between 7am and 8pm.' });
+      return;
+    }
 
     const { db } = await connect();
 
