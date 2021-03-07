@@ -1,0 +1,35 @@
+.navContainer {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ height: 3rem;
+
+ margin: 0.75rem;
+ padding: 0.5rem;
+}
+
+.navContainer ul {
+  list-style: none;
+}
+
+.rightContainer {
+  display: flex;
+  justify-content: space-around;
+}
+
+.rightContainer li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  border: 1px solid grey;
+  border-radius: 5px;
+
+  padding: 0.25rem;
+
+  cursor: pointer;
+}
+
+.rightContainer li:first-child {
+  margin-right: 1rem;
+}
