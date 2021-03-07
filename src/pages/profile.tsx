@@ -75,15 +75,13 @@ export default function Profile() {
         delete available_hours[day];
       }
     }
-
-    console.log(data)
     
-    // try {
-    //   await axios.post(`${process.env.NEXT_PUBLIC_URL}/api/user`, data);
-    //   setLoggedUserWithoutProfile(false);
-    // } catch(err) {
-    //   alert(err.response.data.error);
-    // }
+    try {
+      await axios.post(`${process.env.NEXT_PUBLIC_URL}/api/user`, data);
+      setLoggedUserWithoutProfile(false);
+    } catch(err) {
+      alert(err.response.data.error);
+    }
   }
 
   return (

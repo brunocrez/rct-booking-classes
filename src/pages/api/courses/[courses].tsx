@@ -8,10 +8,10 @@ interface ErrorResponseType {
 
 export default async (req: NextApiRequest, res: NextApiResponse<ErrorResponseType | object[]>): Promise<void> => {
   if(req.method == 'GET') {
-    const { courses } = req.body;
+    const courses  = req.query.courses as string;
 
     if (!courses) {
-      res.status(400).json({ error: 'Course name is missing on request body.' });
+      res.status(400).json({ error: 'Course name is missing on URL.' });
       return;
     }
 
