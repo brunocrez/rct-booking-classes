@@ -1,0 +1,28 @@
+.indexContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  padding: 3rem;
+}
+
+.indexContainer button {
+  width: 10rem;
+  height: 5rem;
+
+  background-color: var(--bg-red);
+  color: #FFF;
+
+  font-size: 1.25rem;
+
+  border: var(--bf-off-white);
+  border-radius: 12px;
+  
+  outline: none;
+  transition: opacity 0.3s;
+}
+
+.indexContainer button:hover {
+  opacity: 0.8;
+}

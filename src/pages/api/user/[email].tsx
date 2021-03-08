@@ -23,8 +23,7 @@ interface SuccessResponseType {
 export default async (req: NextApiRequest, res: NextApiResponse<ErrorResponseType | SuccessResponseType>): Promise<void> => {
   if(req.method == 'GET') {
     const { email } = req.query;
-    console.log(email)
-
+    
     if (!email) {
       res.status(400).json({ error: 'E-mail is missing on URL.' });
       return;

@@ -5,6 +5,7 @@ import { signIn, signOut, useSession } from 'next-auth/client';
 
 import { api } from '../../config/api';
 import { Nav } from '../../src/components/Nav';
+import { Footer } from '../components/Footer';
 
 import styles from '../../styles/pages/Profile.module.css';
 
@@ -88,10 +89,11 @@ export default function Profile() {
     <div>
       <Nav />
       {!session && (
-        <>
-          Favor fazer login para acessar essa página <br/>
-          <button onClick={() => signIn('auth0')}>Sign in</button>
-        </>
+        <div className={styles.warningMessage}>
+          <img src="warning.svg" alt="Warning"/>
+          <p>Sign in first to see this page!</p>
+          <button onClick={() => signIn('auth0')}>Login</button>
+        </div>
       )}
       {session && data && (
         <>
@@ -188,6 +190,7 @@ export default function Profile() {
           </form>
         </div>
       )}
+      <Footer />
     </div>
   )
 }

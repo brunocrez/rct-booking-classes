@@ -16,7 +16,9 @@
 
 .formContainer input {
   margin-bottom: 1.25rem;
-  border: #F2F3F5;
+  border: var(--bg-off-white);
+
+  font-size: 14px;
 
   transition: border 0.3s ease-out;
 }
@@ -35,7 +37,7 @@
 }
 
 .teacherContainer div div {
-  border: 1px solid #F2F3F5;
+  border: 1px solid var(--bg-off-white);
   border-radius: 12px;
 
   width: 10.5rem;
@@ -72,6 +74,47 @@
   border: none;
 
   transition: opacity 0.2s;
+}
+
+.warningMessage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  padding: 4rem 0;
+}
+
+.warningMessage img {
+  width: 12rem;
+  height: 12rem;
+}
+
+.warningMessage p {
+  font-size: 3rem;
+  color: #D23535;
+  font-weight: 700;
+}
+
+.warningMessage button {
+  width: 10rem;
+  height: 5rem;
+  margin-top: 2rem;
+
+  background-color: var(--bg-red);
+  color: #FFF;
+
+  font-size: 1.25rem;
+
+  border: var(--bf-off-white);
+  border-radius: 12px;
+
+  outline: none;
+  transition: opacity 0.3s;
+}
+
+.warningMessage button:hover {
+  opacity: 0.8;
 }
 
 .teacherContainer div div:hover,

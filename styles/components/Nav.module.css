@@ -3,12 +3,13 @@
  justify-content: space-between;
  align-items: center;
  height: 5rem;
+ /* position: fixed; */
 
  padding: 0.5rem;
 
  color: #FFF;
  font-size: 24px;
- background: #902323;
+ background: var(--bg-red);
 }
 
 .navContainer ul {
@@ -30,19 +31,19 @@
   justify-content: space-around;
 }
 
-.rightContainer li {
+.rightContainer a {
   display: flex;
   align-items: center;
   justify-content: center;
   
-  border: 1px solid #902323;
+  border: 1px solid var(--bg-red);
   border-radius: 5px;
 
   width: 9rem;
   padding: 0.25rem;
 
   background: #FFF;
-  color: #902323;
+  color: var(--bg-red);
   font-size: 1rem;
   font-weight: 700;
 
@@ -55,6 +56,6 @@
   margin-right: 1rem;
 }
 
-.rightContainer li:hover {
+.rightContainer a:hover {
   filter: brightness(0.9);
 }

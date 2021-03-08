@@ -17,7 +17,7 @@ export function Nav() {
       </ul>
       <ul className={styles.rightContainer}>
         <li>
-          <Link href="/profile">
+          <Link href="/profile">            
             <a>Profile</a>
           </Link>
         </li>
