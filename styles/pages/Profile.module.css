@@ -3,6 +3,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  padding: 2rem;
 }
 
 .formContainer {
@@ -14,30 +16,70 @@
 
 .formContainer input {
   margin-bottom: 1.25rem;
+  border: #F2F3F5;
+
+  transition: border 0.3s ease-out;
 }
 
 .teacherContainer {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+  width: 100%;
+  text-align: center;
 }
 
 .teacherContainer div {
-  width: 3rem;
-  border: 1px solid #fff;
-  border-radius: 5px;
-  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 
-  padding: 0.25rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.teacherContainer div div {
+  border: 1px solid #F2F3F5;
+  border-radius: 12px;
+
+  width: 10.5rem;
+  height: 2.75rem;
 
   cursor: pointer;
+  transition: opacity 0.2s;
 }
 
-.teacherContainer div:first-child {
-  background-color: greenyellow;
+.teacherContainer div div:first-child {
+  color: #FFF;
+  font-weight: 700;
+  background-color: #5B900B;
 }
 
-.teacherContainer div:last-child {
-  background-color: lightcoral;
+.teacherContainer div div:last-child {
+  color: #FFF;
+  font-weight: 700;
+  background-color: #B11313;
+}
+
+.submitButton {
+  width: 22rem;
+  padding: 0.25rem 1rem;
+  height: 2.75rem;
+  border-radius: 15px;
+
+  outline: none;
+
+  background: #036fa2;
+  color: #FFF;
+  font-size: 20px;
+  font-weight: 500;
+  border: none;
+
+  transition: opacity 0.2s;
+}
+
+.teacherContainer div div:hover,
+.submitButton:hover {
+  opacity: 0.9;
+}
+
+.formContainer input:hover,
+.formContainer input:focus {
+  border: 1px solid rgb(241, 210, 210);
 }

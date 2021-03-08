@@ -8,9 +8,9 @@ export function Nav() {
       <ul>        
         <li>
           <Link href="/">
-            <a>
-              <img src="logo.svg" alt="Logo" style={{ height: 20, width: 20, marginRight: '4px' }}/>
-              Booking Classes
+            <a className={styles.leftContainer}>
+              <img src="logo.png" alt="Logo"/>
+              <p>Booking Classes</p>
             </a>
           </Link>
         </li>   

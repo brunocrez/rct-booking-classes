@@ -110,22 +110,19 @@ export default function Profile() {
             <input 
               value={name}
               onChange={(e) => setName(e.target.value)}
-              type="text"
               placeholder="Name" />
             <input 
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              type="email"
               placeholder="E-mail" />
             <input 
               value={phone}
-              onChange={(e) => setPhone(e.target.value)}            
-              type="cellphone"
+              onChange={(e) => setPhone(e.target.value)}
               placeholder="Phone Number" />
 
-            <div>
+            <div className={styles.teacherContainer}>
               <h4>Are you a Teacher?</h4>
-              <div className={styles.teacherContainer}>
+              <div>
                 <div onClick={() => setIsTeacher(true)}>Yes</div>
                 <div onClick={() => setIsTeacher(false)}>No</div>
               </div>
@@ -160,34 +157,34 @@ export default function Profile() {
                   value={tuesday}
                   onChange={(e) => setTuesday(e.target.value)} 
                   type="text"
-                  placeholder="2PM, 5PM" 
+                  placeholder="7, 20, 21" 
                 />   
                 <h4>Wednesday:</h4>
                 <input
                   value={wednesday}
                   onChange={(e) => setWednesday(e.target.value)} 
                   type="text"
-                  placeholder="2PM, 5PM" 
+                  placeholder="7, 20, 21" 
                 />   
-                <h4>thursday:</h4>
+                <h4>Thursday:</h4>
                 <input
                   value={thursday}
                   onChange={(e) => setThursday(e.target.value)} 
                   type="text"
-                  placeholder="2PM, 5PM" 
+                  placeholder="7, 20, 21" 
                 />   
                 <h4>Friday:</h4>
                 <input
                   value={friday}
                   onChange={(e) => setFriday(e.target.value)} 
                   type="text"
-                  placeholder="2PM, 5PM" 
+                  placeholder="7, 20, 21" 
                 />                                                                            
               </>
             )}
 
 
-            <button type="submit">Create Profile</button>
+            <button className={styles.submitButton} type="submit">Create Profile</button>
           </form>
         </div>
       )}
