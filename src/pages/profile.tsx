@@ -26,6 +26,8 @@ const months = [
   'Dezembro',
 ];
 
+const days = [ 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday' ];
+
 export default function Profile() {
   const [ session, loading ] = useSession();
 
@@ -231,8 +233,8 @@ export default function Profile() {
 
             {showTeacher && (
               <>
-                <div className={styles.showTeacherContainer}>
-                  <p className="">Seus agendamentos:</p>
+                <div>
+                  <p>Your Appointments:</p>
                   <div>
                     {teacherAppointments.map((appointment) => (
                       <div key={appointment.date} className="mb-2">
@@ -268,11 +270,7 @@ export default function Profile() {
                                 );
                             }}
                           >
-                            <p
-                              className={
-                                appointment.appointment_link && 'cursor-pointer'
-                              }
-                            >
+                            <p className={appointment.appointment_link && 'cursor-pointer'}>
                               {appointment.location}
                             </p>
                           </div>
@@ -282,92 +280,64 @@ export default function Profile() {
                   </div>
                 </div>
 
-                <div className="w-5/6 m-auto mt-12">
-                  <span className="font-bold text-2xl mr-2">
-                    Sua disponibilidade
-                  </span>
-                </div>
-                <div className="text-2xl border-2 border-box w-4/6 m-auto mt-4 p-4">
+                <div>
+                  <div className={styles.flexList}>
+                    <div>
+                      <span>Disciplines</span>
+                      <ul>
+                        {data.data.courses.map((course, index) => (
+                          <div key={index}>
+                            <li>
+                              <img src="check.png" alt="Check Image"/>
+                              <p>{course}</p>
+                            </li>
+                          </div>
+                        ))}
+                      </ul>
+                    </div>
+                    <div>
+                      <span>Meeting Places</span>
+                      <ul>
+                        {data.data.available_locations.map((location, index) => (
+                          <div key={index}>
+                            <li>
+                              <img src="check.png" alt="Check Image"/>
+                              <p>{location}</p>
+                            </li>
+                          </div>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+
                   <div>
-                    <div className="mb-2">
-                      <p>Disciplinas:</p>
-                      <div className="flex flex-row space-x-10">
-                        <div className="border-2 border-box w-full text-center">
-                          <p>{data.data.courses.join(', ')}</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="mb-2">
-                      <p>Locais:</p>
-                      <div className="flex flex-row space-x-10">
-                        <div className="border-2 border-box w-full text-center">
-                          <p>{data.data.available_locations.join(', ')}</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="mb-2">
-                      <p>Horários:</p>
-                      <div className="flex flex-row space-x-10">
-                        <div className="border-2 border-box w-1/2 text-center">
-                          <p>Segunda</p>
-                        </div>
-                        <div className="border-2 border-box w-1/2 text-center">
-                          <p>
-                            {data.data.available_hours?.monday?.join(', ') ||
-                              'Não disponível'}
-                          </p>
-                        </div>
-                      </div>
-
-                      <div className="flex flex-row space-x-10 mt-4">
-                        <div className="border-2 border-box w-1/2 text-center">
-                          <p>Terça</p>
-                        </div>
-                        <div className="border-2 border-box w-1/2 text-center">
-                          <p>
-                            {data.data.available_hours?.tuesday?.join(', ') ||
-                              'Não disponível'}
-                          </p>
-                        </div>
-                      </div>
-
-                      <div className="flex flex-row space-x-10 mt-4">
-                        <div className="border-2 border-box w-1/2 text-center">
-                          <p>Quarta</p>
-                        </div>
-                        <div className="border-2 border-box w-1/2 text-center">
-                          <p>
-                            {data.data.available_hours?.wednesday?.join(', ') ||
-                              'Não disponível'}
-                          </p>
-                        </div>
-                      </div>
-
-                      <div className="flex flex-row space-x-10 mt-4">
-                        <div className="border-2 border-box w-1/2 text-center">
-                          <p>Quinta</p>
-                        </div>
-                        <div className="border-2 border-box w-1/2 text-center">
-                          <p>
-                            {data.data.available_hours?.thursday?.join(', ') ||
-                              'Não disponível'}
-                          </p>
-                        </div>
-                      </div>     
-                      <div className="flex flex-row space-x-10 mt-4">
-                        <div className="border-2 border-box w-1/2 text-center">
-                          <p>Sexta</p>
-                        </div>
-                        <div className="border-2 border-box w-1/2 text-center">
-                          <p>
-                            {data.data.available_hours?.friday?.join(', ') ||
-                              'Não disponível'}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
+                    <table className={styles.tableTime}>
+                      <tbody>
+                        <tr>
+                          <td colSpan={2} className={styles.tableHead}>Available Time</td>
+                        </tr>
+                        <tr>
+                          <td>Monday</td>
+                          <td>{data.data.available_hours?.monday?.join(', ') || 'Not Available'}</td>
+                        </tr>
+                        <tr>
+                          <td>Tuesday</td>
+                          <td>{data.data.available_hours?.tuesday?.join(', ') || 'Not Available'}</td>
+                        </tr>
+                        <tr>
+                          <td>Wednesday</td>
+                          <td>{data.data.available_hours?.wednesday?.join(', ') || 'Not Available'}</td>
+                        </tr>
+                        <tr>
+                          <td>Thursday</td>
+                          <td>{data.data.available_hours?.thursday?.join(', ') || 'Not Available'}</td>
+                        </tr>
+                        <tr>
+                          <td>Friday</td>
+                          <td>{data.data.available_hours?.friday?.join(', ') || 'Not Available'}</td>
+                        </tr>
+                      </tbody>                            
+                    </table>
                   </div>
                 </div>              
               </>

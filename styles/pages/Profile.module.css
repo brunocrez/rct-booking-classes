@@ -19,6 +19,8 @@
 
 .profileContainer section {
   flex: 1;
+  height: 100%;
+  padding: 1rem;
 }
 
 .profileContainer .listItemProfile {
@@ -66,7 +68,7 @@
   height: 4rem;
   margin-right: 2rem;
 
-  background-color: var(--bg-red);
+  background-color: var(--bg-orange);
   color: #FFF;
 
   font-size: 1.5rem;
@@ -176,7 +178,7 @@
   height: 5rem;
   margin-top: 2rem;
 
-  background-color: var(--bg-red);
+  background-color: var(--bg-orange);
   color: #FFF;
 
   font-size: 1.25rem;
@@ -188,8 +190,60 @@
   transition: opacity 0.3s;
 }
 
-.showTeacherContainer {
-  padding: 3rem;
+.flexList {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 0.25rem;
+  margin: 0.5rem 0;
+}
+
+.flexList span {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--bg-orange);
+}
+
+.flexList ul {
+  list-style: none;
+  margin-top: 1rem;
+}
+
+.flexList li {
+  margin-bottom: 0.5rem;
+
+  display: flex;
+}
+
+.flexList img {
+  width: 20px;
+  height: 20px;
+
+  border: none;
+
+  margin-right: 0.5rem;
+}
+
+.tableTime {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.tableTime td,
+.tableTime th {
+  border: 1px solid #DDD;
+  padding: 0.5rem;
+}
+
+.tableTime .tableHead {
+  background-color: #5348D9;
+  color: #FFF;
+  text-align: center;
+  font-weight: 700;
+}
+
+.tableTime tr:nth-child(2n) {
+  background-color: #E8D8E8;
 }
 
 .warningMessage button:hover {

@@ -9,7 +9,7 @@
 
  color: #FFF;
  font-size: 24px;
- background: var(--bg-red);
+ background: var(--bg-orange);
 }
 
 .navContainer ul {
@@ -36,14 +36,14 @@
   align-items: center;
   justify-content: center;
   
-  border: 1px solid var(--bg-red);
+  border: 1px solid var(--bg-orange);
   border-radius: 5px;
 
   width: 9rem;
   padding: 0.25rem;
 
   background: #FFF;
-  color: var(--bg-red);
+  color: var(--bg-orange);
   font-size: 1rem;
   font-weight: 700;
 
